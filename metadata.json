@@ -1,0 +1,10 @@
+{
+  "name": "SIM TPQ DIGITAL",
+  "description": "Sistem Informasi Manajemen TPQ Digital Terpadu dengan fungsionalitas pencatatan riwayat hafalan, mutabaah, pembayaran, tabungan, dan rapor digital.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

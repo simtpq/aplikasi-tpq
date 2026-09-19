@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F3ECE0;
+  overscroll-behavior: none;
+  touch-action: pan-y;
+}
+
+#app-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #F3ECE0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+
+/* Hide scrollbars inside mobile app-root and app-container to keep premium app feel */
+#app-root::-webkit-scrollbar,
+#app-container::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px !important;
+  background: transparent !important;
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Beautiful custom scrollbar for general viewports and scrollable tables */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f8fafc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+.loader {
+  border: 4px solid #f1f5f9;
+  border-top: 4px solid #0d9488;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.btn-active:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-active:active:not(:disabled) {
+  transform: scale(0.96) translateY(0);
+  opacity: 0.9;
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #0d9488;
+}
+
+.toggle-checkbox:checked+.toggle-label {
+  background-color: #0d9488;
+}
+
+.input-premium {
+  background: #f8fafc;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.input-premium:focus {
+  background: #ffffff;
+  border: 1px solid #0d9488;
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+  outline: none;
+}
+
+.card-premium {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.card-premium:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Hide duplicate sticky headers inside the admin main viewport */
+#admin-main-viewport .sticky.bg-transparent {
+  display: none !important;
+}
+/* Show scrollbar only on hover for elements with hide-scrollbar */
+.hide-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.hide-scrollbar:hover,
+.hide-scrollbar:active {
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.hide-scrollbar:hover::-webkit-scrollbar-thumb,
+.hide-scrollbar:active::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+}
